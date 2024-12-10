@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>Video: {{ video_name }}</p>
+    <p>Prediction: {{ result }}</p>
+    <p>Confidence: {{ confidence }}</p>
+    <a href="/">Back to Upload</a>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+  <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Face Detection App</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <script defer src="{% static 'js/script.js' %}"></script>
+  </head>
+  <body>
+    <image class="BG" src="https://wallpapercave.com/wp/wp5957944.jpg" width="100%" height="100%"></image>
+    <!-- App Container -->
+    <div class="app-container">
+      <!-- Topbar -->
+      <nav class="topnav">
+        <div class="som">
+        <img src="https://imgs.search.brave.com/e83PCcmzUO7NHTOvhKYIc_yvRTSJxC2O6AbLPzmTFdw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4x/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvaW50ZXJuZXQt/b2YtYmVoYXZpb3It/aW9iLzY0L2ZhY2lh/bC1yZWNvZ25pdGlv/bi1haS1zY2FuLWF1/dGhlbnRpY2F0aW9u/LTEyOC5wbmc"></img>
+          <h1 class="logo">AIApp</h1>
+        </div>
+        <ul class="topnav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#upload">Detection</a></li>
+          <li><a href="#chatbot">Chatbot</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main Content Area -->
+      <main class="content-area" data-scroll-container>
+        <!-- Home Section -->
+        <section id="home" class="section home" data-scroll-section>
+          <div class="home-content">
+            <h1>AI-Powered Face Detection</h1>
+            <p>Upload an image to analyze faces.</p>
+            <button class="cta-btn">
+              <a href="#upload">Get Started</a>
+            </button>
+          </div>
+        </section>
+
+        <!-- Face Detection Section -->
+        <section id="upload" class="section upload">
+            <h2>Upload Face Image or Video</h2>
+            <form id="upload-form" action="/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="video" id="video-input" accept="video/*" required />
+                <button type="submit">Analyze Video</button>
+            </form>
+            <div id="output-message"></div>
+        </section>
+
+        <!-- Chatbot Section -->
+        <section id="chatbot" class="section chatbot" data-scroll-section>
+          <h2>Chatbot</h2>
+          <p>Ask our AI assistant!</p>
+          <div class="chatbot-container">
+            <div class="chatbox" id="chatbox">
+              <div class="chatbox-messages" id="chatbox-messages"></div>
+              <input
+                type="text"
+                id="chat-input"
+                placeholder="Type your question..."
+              />
+              <button id="send-btn">Send</button>
+            </div>
+            <button class="chatbot-toggle" id="chatbot-toggle">💬 Chat</button>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about" data-scroll-section>
+          <h2>About Us</h2>
+          <p>Innovating AI solutions for face detection.</p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

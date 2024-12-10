@@ -1,0 +1,302 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+  }
+  
+  /* General Styles */
+  body {
+    margin: 0;
+    padding: 0;
+    
+  
+  .jetbrains-mono {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+    font-family: JetBrains, "JetBrains Mono", monospace;
+    background-color: #000000; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+  .BG{
+    position: absolute;
+    z-index: -10;
+  }
+  /* App Container */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Topbar */
+  .topnav {
+  
+    .som{
+      .logo {
+        margin-left: 40px;
+      }
+      img{
+        width: 60px;
+        height: 60px;
+        
+      }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 50px;
+    }
+    width: 100%;
+    height: 90px;
+    position: sticky; 
+    top: 0;
+    z-index: 10; 
+    background:  rgba(92, 91, 91, 0.8); /* dark gray background */
+    backdrop-filter: blur(10px); /* foggy glass effect */
+    border-bottom: 5px solid white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: inset 0 0 200rem rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+  }
+  
+  
+  
+  
+  .topnav h1 {  
+    margin: 80px;
+    font-size: 2.0rem;
+  }
+  
+  .topnav-links {
+    display: flex;
+    flex-direction: row;
+    margin-right: 80px;
+    padding-right: 50px;
+  }
+  
+  .topnav-links li {
+    list-style-type: none;
+    margin: 0 15px;
+  }
+  
+  .topnav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  /* Main Content Area */
+  .content-area {
+    .home-content{
+      width: 100%;
+      height: 20vh;
+      display: flexbox;
+      gap: 10px;
+      align-items: center;
+      position: sticky; 
+      top: 0;
+      z-index: 10; 
+      background:  rgba(92, 91, 91, 0.8); /* dark gray background */
+      backdrop-filter: blur(10%); /* foggy glass effect */
+      border-radius: 20px;
+      padding: 35px;
+      
+    }
+    width: 100%;
+    height: calc(100vh - 150px); /* Adjusted height to fit with topnav */
+    overflow-y: auto; /* Allow vertical scrolling */
+    /* padding: 50px 10px;  */
+    position: relative;
+  }
+  
+  .content-area::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+  }
+  
+  /* Sections */
+  .section {
+    position: relative;
+    margin-bottom: 100px;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 15px;
+    animation: fadeIn 1s ease;
+    
+  }
+  
+  .home {
+    background-image: url("https://images.unsplash.com/photo-1578961213226-45b4a0b5d36d");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  
+  .overview {
+    background-image: url("https://images.unsplash.com/photo-1545282583-3b7bc5400f7d");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .upload {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  #preview-image {
+    object-fit: cover;
+    border-radius: 10px;
+    height: 400px;
+    width: 800px;
+  }
+  
+  .chatbot {
+    background-image: url("https://images.unsplash.com/photo-1512058567032-c15f7b1b2273");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  
+  /* Header Text */
+  /* h2 {
+    margin-bottom: 20px;
+  } */
+  
+  /* Call to Action Button */
+  button {
+    padding: 10px 20px;
+    background-color: #f04;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #d00;
+  }
+  
+  button a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  /* Overview Content */
+  .overview-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping to prevent overflow */
+  }
+  
+  .overview-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s;
+    width: 100%; /* Ensure items don't cause overflow */
+    max-width: 300px;
+  }
+  
+  .overview-item:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Chatbot Styles */
+  .chatbot-container {
+    position: relative;
+  }
+  
+  .chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f04;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .chatbot-toggle:hover {
+    background-color: #d00;
+  }
+  
+  .chatbox {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 100%; /* Ensure it fits within screen width */
+    max-width: 300px;
+    max-height: 400px;
+    background-color: #1f1f1f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .chatbox-messages {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    border-bottom: 1px solid #333;
+  }
+  
+  #chat-input {
+    padding: 10px;
+    border: none;
+    width: 80%;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  #send-btn {
+    padding: 10px;
+    background-color: #f04;
+    color: #fff;
+    border: none;
+    width: 20%;
+    cursor: pointer;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #1f1f1f;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
